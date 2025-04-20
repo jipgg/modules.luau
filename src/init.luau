@@ -1,12 +1,12 @@
 --!strict
-local Module = {}
+local module = {}
 
-local Multicast = require("./Multicast")
-export type Multicast<Args...> = Multicast.Multicast<Args...>
-Module.Multicast = Multicast
+local multicast = require("./multicast")
+export type multicast<Args...> = multicast.multicast<Args...>
+module.multicast = multicast
 
-local Result = require("./Result")
-export type Result<T, E> = Result.Result<T, E>
-Module.Result = Result
+local result = require("./result")
+export type result<T, E> = result.result<T, E>
+module.result = result
 
-return Module
+return module

@@ -4,7 +4,7 @@ export type Type<T = nil, E = string> = {
     HAS_VALUE: boolean,
     has_error: (self: Result<T, E>) -> boolean,
     and_then: (self: Result<T, E>, fn: (T)->Result<T, E>) -> Result<T, E>,
-    or_else: (self: Result<T, E>, fn: (T)->Result<T, E>) -> Result<T, E>,
+    or_else: (self: Result<T, E>, fn: (E)->Result<T, E>) -> Result<T, E>,
     match: <R>(self: Result<T, E>, valfn: (T)->R, errfn: (E)->R) -> R,
     error: (self: Result<T, E>) -> E,
     value: (self: Result<T, E>) -> T,
